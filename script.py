@@ -2,11 +2,15 @@ from datetime import datetime
 import random
 import json
 
+# on ecrase la totalité du contenu du fichier
 myFile = open('data.json', 'w').close()
+
 
 def getRandomNumber(start, stop):
     return random.uniform(start, stop)
 
+
+# on génère 5 mesures random
 temp_int = [getRandomNumber(2.5, 4), getRandomNumber(2.5, 4), getRandomNumber(2.5, 4), getRandomNumber(2.5, 4), getRandomNumber(2.5, 4)]
 temp_ext = [getRandomNumber(8, 14), getRandomNumber(8, 14), getRandomNumber(8, 14), getRandomNumber(8, 14), getRandomNumber(8, 14)]
 weight_milk = [getRandomNumber(3512, 4607), getRandomNumber(3512, 4607), getRandomNumber(3512, 4607), getRandomNumber(3512, 4607), getRandomNumber(3512, 4607)]
@@ -19,9 +23,10 @@ ecoli = [getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 4
 listeria = [getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54)]
 time = str(datetime.now())
 
+# et on créé notre dictionaire avec ces données précédement génerées
 mesures = {
     "data": {
-        "unit": 1,
+        "unit": 2,
         "mesures": [{
             "num_automate": 1,
             "type_automate": 0X0000BA20,
@@ -97,8 +102,10 @@ mesures = {
 
     }
 }
+# que l'on transforme en onjet json
 data = json.dumps(mesures)
 
+# et qu'on écris dans le fichier prévu à cet effet
 myFile = open('data.json', 'a')
 myFile.write(data)
 
