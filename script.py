@@ -21,12 +21,13 @@ nacl = [getRandomNumber(1, 1.7), getRandomNumber(1, 1.7), getRandomNumber(1, 1.7
 salmonelle = [getRandomNumber(17, 37), getRandomNumber(17, 37), getRandomNumber(17, 37), getRandomNumber(17, 37), getRandomNumber(17, 37)]
 ecoli = [getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49)]
 listeria = [getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54)]
-time = str(datetime.now())
+time = datetime.now()
+unit = 1
 
 # et on créé notre dictionaire avec ces données précédement génerées
 mesures = {
     "data": {
-        "unit": 2,
+        "unit": unit,
         "mesures": [{
             "num_automate": 1,
             "type_automate": 0X0000BA20,
@@ -40,7 +41,7 @@ mesures = {
             "salmonelle": round(salmonelle[0], 0),
             "ecoli": round(ecoli[0], 0),
             "listeria": round(listeria[0], 0),
-            "time": time
+            "time": str(time)
         },{
             "num_automate": 2,
             "type_automate": 0X0000BA21,
@@ -54,7 +55,7 @@ mesures = {
             "salmonelle": round(salmonelle[1], 0),
             "ecoli": round(ecoli[1], 0),
             "listeria": round(listeria[1], 0),
-            "time": time
+            "time": str(time)
         },{
             "num_automate": 3,
             "type_automate": 0X0000BA22,
@@ -68,7 +69,7 @@ mesures = {
             "salmonelle": round(salmonelle[2], 0),
             "ecoli": round(ecoli[2], 0),
             "listeria": round(listeria[2], 0),
-            "time": time
+            "time": str(time)
         },{
             "num_automate": 4,
             "type_automate": 0X0000BA23,
@@ -82,7 +83,7 @@ mesures = {
             "salmonelle": round(salmonelle[3], 0),
             "ecoli": round(ecoli[3], 0),
             "listeria": round(listeria[3], 0),
-            "time": time
+            "time": str(time)
         },{
             "num_automate": 5,
             "type_automate": 0X0000BA24,
@@ -96,7 +97,7 @@ mesures = {
             "salmonelle": round(salmonelle[4], 0),
             "ecoli": round(ecoli[4], 0),
             "listeria": round(listeria[4], 0),
-            "time": time
+            "time": str(time)
         }
         ]
 
@@ -105,7 +106,11 @@ mesures = {
 # que l'on transforme en onjet json
 data = json.dumps(mesures)
 
+file_name = str(unit)+'_'+str(time.timestamp())+'.json'
+print(file_name)
+
 # et qu'on écris dans le fichier prévu à cet effet
+# myFile = open('history/'+file_name, 'a')
 myFile = open('data.json', 'a')
 myFile.write(data)
 
