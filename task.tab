@@ -2,3 +2,20 @@
 @reboot python script.py
 @reboot python script.py
 @reboot python script.py
+@reboot python script.py
+@reboot python script.py
+@reboot python -m script.py
+@reboot python script.py
+@reboot python D:\DevOps\ScriptPy\script.py
+@reboot python D:/DevOps/ScriptPy/script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * python script.py
+* * * * * tree
+* * * * * C:\Program Files\Python36\python.exe script.py
