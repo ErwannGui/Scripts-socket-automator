@@ -22,7 +22,8 @@ salmonelle = [getRandomNumber(17, 37), getRandomNumber(17, 37), getRandomNumber(
 ecoli = [getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49), getRandomNumber(35, 49)]
 listeria = [getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54), getRandomNumber(28, 54)]
 time = datetime.now()
-unit = 1
+# unit = 1
+unit = round(getRandomNumber(1, 3))
 
 # et on créé notre dictionaire avec ces données précédement génerées
 mesures = {
@@ -110,7 +111,7 @@ file_name = str(unit)+'_'+str(time.timestamp())+'.json'
 print(file_name)
 
 # et qu'on écris dans le fichier prévu à cet effet
-# myFile = open('history/'+file_name, 'a')
-myFile = open('data.json', 'a')
+myFile = open('history/'+file_name, 'a')
+# myFile = open('data.json', 'a')
 myFile.write(data)
 

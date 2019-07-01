@@ -1,5 +1,3 @@
 python-crontab
-tornado==5.0.2
 python-engineio
-python_socketio
 six==1.10.0
